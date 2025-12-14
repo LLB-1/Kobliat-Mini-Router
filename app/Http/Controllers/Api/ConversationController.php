@@ -30,7 +30,6 @@ class ConversationController extends Controller
             'customer_id' => $conversation->customer_id,
             'status' => $conversation->status,
             'messages' => $conversation->messages,
-            'customer_name' => $conversation->customer->name,
         ];
 
         return response()->json($conversationReturn);
