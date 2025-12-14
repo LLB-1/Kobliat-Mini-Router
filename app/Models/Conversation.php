@@ -9,4 +9,11 @@ class Conversation extends Model
 {
     /** @use HasFactory<\Database\Factories\ConversationFactory> */
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [];
 }
