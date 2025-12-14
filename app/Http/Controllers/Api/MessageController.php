@@ -14,6 +14,7 @@ class MessageController extends Controller
      * Store a message from external API.
      * Expects JSON: {
      *   "external_user_id": 123,
+     *   "customer_name": "John Doe",
      *   "message": "Hello",
      *   "message_id": "msg_123",
      *   "sent_at": "2025-12-14 10:30:00"
@@ -23,6 +24,7 @@ class MessageController extends Controller
     {
         $validated = $request->validate([
             'external_user_id' => 'required|integer',
+            'customer_name' => 'required|string',
             'message' => 'required|string',
             'message_id' => 'required|string',
             'sent_at' => 'required|date_format:Y-m-d H:i:s',
@@ -35,7 +37,7 @@ class MessageController extends Controller
         if (!$customer) {
             $customer = Customer::create([
                 'external_id' => $validated['external_user_id'],
-                'name' => 'Customer ' . $validated['external_user_id'],
+                'name' => $validated['customer_name'],
             ]);
         }
 
