@@ -38,7 +38,8 @@ class ConversationController extends Controller
      */
     public function show(Conversation $conversation)
     {
-        //
+        $conversation->load('messages');
+        return view('conversation', compact('conversation'));
     }
 
     /**
