@@ -14,6 +14,7 @@ class ConversationController extends Controller
     public function index()
     {
         $conversations = Conversation::latest()->paginate(10);
+        return view("home", $conversations);
     }
 
     /**

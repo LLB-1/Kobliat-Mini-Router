@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ConversationController;
+use App\Models\Conversation;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ConversationController::class, 'index']);
