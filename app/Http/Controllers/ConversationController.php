@@ -13,7 +13,7 @@ class ConversationController extends Controller
      */
     public function index()
     {
-        //
+        $conversations = Conversation::latest()->paginate(10);
     }
 
     /**

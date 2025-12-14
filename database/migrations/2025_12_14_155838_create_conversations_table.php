@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->id();
-            $table->foreign('customer_id')->constrained()->onDelete('cascade');
+            $table->foreignId('customer_id')->constrained()->onDelete('cascade');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
