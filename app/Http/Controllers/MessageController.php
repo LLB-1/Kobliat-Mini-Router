@@ -29,7 +29,20 @@ class MessageController extends Controller
      */
     public function store(StoreMessageRequest $request)
     {
-        //
+        $request->validate([
+            'message' => 'required|string|max:1000',
+            'conversation_id' => 'required|integer|exists:conversations,id',
+        ]);
+
+        Message::create([
+            'message' => $request->message,
+            'conversation_id' => $request->conversation_id,
+            'customer_id' => 0,
+            'message_id' => uniqid('kobliat_msg_'),
+            'sent_at' => now(),
+        ]);
+
+        return redirect()->back();
     }
 
     /**

@@ -39,7 +39,7 @@
 
         <!-- Input Area -->
         <div class="border-t p-4 bg-white flex-shrink-0">
-            <form class="flex gap-3">
+            <form class="flex gap-3" method="POST" action="{{ route('messages.store') }}">
                 @csrf
                 <a class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
                     href="{{ route('conversations.index') }}">
@@ -52,6 +52,9 @@
                     class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition">
                     Send
                 </button>
+                {{-- Hidden Input  --}}
+                <input type="hidden" name="conversation_id" value="{{ $conversation->id }}">
+
             </form>
         </div>
 
