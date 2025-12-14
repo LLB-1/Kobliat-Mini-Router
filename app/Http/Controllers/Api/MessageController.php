@@ -55,7 +55,7 @@ class MessageController extends Controller
         // Create the message
         $message = Message::create([
             'conversation_id' => $conversation->id,
-            'customer_id' => $validated['external_user_id'],
+            'customer_id' => $customer->id,
             'message' => $validated['message'],
             'message_id' => $validated['message_id'],
             'sent_at' => $validated['sent_at'],
