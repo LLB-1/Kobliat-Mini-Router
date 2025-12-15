@@ -235,4 +235,4 @@ I also referenced the standard Laravel documentation throughout development:
 
 - https://laravel.com/docs/12.x
 
-Additionally, the use of an **LLM** proved extremely valuable in accelerating the learning process, helping to clarify Laravel-specific conventions, behaviors, and framework features.
+Additionally, the use of an **LLM** helped accelerate my learning process, explaining Laravel-specific conventions, behaviors, and framework features.
