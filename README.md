@@ -1,59 +1,238 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚦 Kobliat Mini Router
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A `Laravel` based test project to show case API enpoints and user friendly GUI experiences.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🧰 Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 📦 Dependencies
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ensure the following tools are installed on your system:
 
-## Learning Laravel
+* 🐘 **PHP** (8.4)
+* 🎼 **Composer**
+* 🟢 **Node.js**
+* 📦 **NPM**
+* 🗄️ **SQLite3**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🐘 PHP & 🎼 Composer
 
-## Laravel Sponsors
+Run the command that matches your operating system:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### 🐧 Linux
 
-### Premium Partners
+```bash
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+#### 🍎 macOS
 
-## Contributing
+```bash
+/bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.4)"
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### 🪟 Windows
 
-## Code of Conduct
+```powershell
+# Run as administrator
+Set-ExecutionPolicy Bypass -Scope Process -Force;
+[System.Net.ServicePointManager]::SecurityProtocol = \
+  [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+iex ((New-Object System.Net.WebClient)
+  .DownloadString('https://php.new/install/windows/8.4'))
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+### 🗄️ SQLite3
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Install SQLite3 using the following commands:
 
-## License
+#### 🐧 Linux
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+sudo apt install sqlite3
+```
+
+#### 🍎 macOS
+
+```bash
+brew install sqlite
+```
+
+#### 🪟 Windows
+
+⬇️ Download directly from:
+
+👉 [https://www.sqlite.org/download.html](https://www.sqlite.org/download.html)
+
+---
+
+### 🧬 Clone from GitHub
+
+Choose a directory for the project and run:
+
+```bash
+git clone https://github.com/LLB-1/Kobliat-Mini-Router.git
+```
+
+---
+
+### ⚙️ Environment Setup
+
+1. Locate the `.env.example` file
+2. **Copy & paste** it in the same directory
+3. Rename the copy to `.env`
+
+---
+
+### 📦 Install Project Dependencies
+
+Run the following commands from the project root:
+
+```bash
+composer install
+npm install
+npm run build
+php artisan migrate   # choose "yes" when prompted
+php artisan key:generate
+```
+
+---
+
+### 🗃️ Seed Required Database Record
+
+Before using the application, **manually insert** one record into the `customers` table.
+
+The fields **must match exactly**:
+
+| id | name    | external_id | created_at          | updated_at          |
+| -- | ------- | ----------- | ------------------- | ------------------- |
+| 0  | Kobliat | 0           | 2025-12-14 16:30:45 | 2025-12-14 16:30:45 |
+
+---
+
+## ▶️ Run the Application
+
+From the project root, run:
+
+```bash
+composer run dev
+```
+
+In your terminal, **Ctrl + Click** the local URL (example below) or open it manually in your browser:
+
+```text
+INFO  Server running on [http://127.0.0.1:8001]
+```
+
+---
+
+## 🧪 Testing the API
+
+Use the following `curl` commands while the application is running.
+
+---
+
+### ✉️ Send a Message
+
+```bash
+curl -X POST http://localhost:8000/api/messages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "external_user_id": 1,
+    "customer_name": "John Doe",
+    "message": "Hello, I need assistance",
+    "message_id": "msg_123",
+    "sent_at": "2025-12-14 20:30:00"
+  }'
+```
+
+---
+
+### 📜 Get All Conversations
+
+```bash
+curl http://localhost:8000/api/conversations \
+  -H "Accept: application/json"
+```
+
+---
+
+### 💬 Get a Single Conversation
+
+```bash
+curl http://localhost:8000/api/conversations/{conversation_id} \
+  -H "Accept: application/json"
+```
+
+---
+
+✅ You are now ready to use **Kobliat Mini Router**.
+
+## 🛠️ Developer Notes
+
+### 📌 Assumptions
+
+* 🔐 **User authentication is intentionally omitted** from this project.
+
+  * All non-external (local) messages are associated with a default `user_id = 0`.
+* 📡 **API requests require all fields to be populated**.
+
+  * For successful responses, follow the example `curl` commands exactly and ensure no fields are omitted or left empty.
+
+---
+
+### 🔄 What Would I Change?
+
+#### 🎨 Styling Best Practices
+
+* The frontend correctly leverages **slots** and **reusable components** ,however, **styling is fully hard-coded** within components.
+* A cleaner and more scalable approach would be to:
+
+  * Centralize styles in `app.css`
+  * Introduce reusable utility classes or a design system
+
+This would satisfy my personal standards more for frontend work.
+
+---
+
+#### 📚 Documentation
+
+* Existing documentation is minimal and mostly uses the default `Laravel` comments made from `Artisan` etc.
+* The project would benefit from:
+
+  * More in-depth inline comments
+  * Clear function- and class-level documentation
+  * Explicit explanations of API contracts and data flow
+
+---
+
+#### 🔐 Authentication
+
+* Adding authentication would remove the **ad-hoc handling** of local user messages.
+* The current `user_id = 0` solution is a temporary, styled workaround.
+## 📝 Personal Note
+
+### 📖 Summary
+This project represents my first experience working with **Laravel** outside of a guided tutorial. As a result, I significantly exceeded the original **3-hour time estimate**. Slowly I put effort towards gaining understanding of Laravel’s **MVC architecture** and routing mechanisms.
+
+The experience was incredibly educational. As the day went on, things started to click, and towards the end of the process I was relying less and less on the assistance of AI and documentation and was able to solve problems independently. 
+
+The `Laravel Bug` may have bitten me and more personal projects are stewing in the back of my mind.
+
+---
+
+### 📚 Learning Materials
+Before starting this project, I worked through an introductory tutorial from the official Laravel documentation:
+
+- https://laravel.com/learn/getting-started-with-laravel/what-are-we-building
+
+I also referenced the standard Laravel documentation throughout development:
+
+- https://laravel.com/docs/12.x
+
+Additionally, the use of an **LLM** helped accelerate my learning process, explaining Laravel-specific conventions, behaviors, and framework features.
