@@ -1,129 +1,217 @@
-# Kobliat Mini Router
+# 🚦 Kobliat Mini Router
 
-## Installation
+A lightweight Laravel-based mini routing service for handling customer conversations and messages.
 
-### Dependencies
+---
 
-To run this application you will need the follwing to be installed on your device:
+## 🧰 Installation
 
--   PHP
--   Composer
--   Node
--   NPM
--   SQLite3
+### 📦 Dependencies
 
-#### PHP & Composer
+Ensure the following tools are installed on your system:
 
-Run the following command according to your operating system.
+* 🐘 **PHP** (8.4)
+* 🎼 **Composer**
+* 🟢 **Node.js**
+* 📦 **NPM**
+* 🗄️ **SQLite3**
 
-##### Linux
+---
 
-```
+### 🐘 PHP & 🎼 Composer
+
+Run the command that matches your operating system:
+
+#### 🐧 Linux
+
+```bash
 /bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
 ```
 
-##### macOS
+#### 🍎 macOS
 
-```
+```bash
 /bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.4)"
-
 ```
 
-##### Windows
+#### 🪟 Windows
 
+```powershell
+# Run as administrator
+Set-ExecutionPolicy Bypass -Scope Process -Force;
+[System.Net.ServicePointManager]::SecurityProtocol = \
+  [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+iex ((New-Object System.Net.WebClient)
+  .DownloadString('https://php.new/install/windows/8.4'))
 ```
-# Run as administrator...
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
 
-```
+---
 
-### SQLite3
+### 🗄️ SQLite3
 
-Run the following command for SQLite3
+Install SQLite3 using the following commands:
 
-#### Linux
+#### 🐧 Linux
 
-```
+```bash
 sudo apt install sqlite3
-
 ```
 
-#### macOS
+#### 🍎 macOS
 
-```
+```bash
 brew install sqlite
-
 ```
 
-#### Windows
+#### 🪟 Windows
 
-Download from: https://www.sqlite.org/download.html
+⬇️ Download directly from:
 
-### Clone from Git Hub
+👉 [https://www.sqlite.org/download.html](https://www.sqlite.org/download.html)
 
-Pick the directory you wish to keep the project files and run the following command.
+---
 
-```
+### 🧬 Clone from GitHub
+
+Choose a directory for the project and run:
+
+```bash
 git clone https://github.com/LLB-1/Kobliat-Mini-Router.git
 ```
 
-### Copy .env.example
+---
 
-In the file structure of the project, find `.env.example` and **copy** **& paste**
-the file and rename it to `.env`
+### ⚙️ Environment Setup
 
-### Run Dependencies
+1. Locate the `.env.example` file
+2. **Copy & paste** it in the same directory
+3. Rename the copy to `.env`
 
-Run
+---
 
-```
+### 📦 Install Project Dependencies
+
+Run the following commands from the project root:
+
+```bash
 composer install
 npm install
 npm run build
-php artisan migrate (choose yes)
+php artisan migrate   # choose "yes" when prompted
 php artisan key:generate
-
 ```
 
-### Edit database field
+---
 
-Before using the application, you must add one record into the `customers` .
-The fields must be exactly as follows
+### 🗃️ Seed Required Database Record
 
-| id  | name    | external_id | created_at          | updated_at          |
-| --- | ------- | ----------- | ------------------- | ------------------- |
-| 0   | Kobliat | 0           | 2025-12-14 16:30:45 | 2025-12-14 16:30:45 |
+Before using the application, **manually insert** one record into the `customers` table.
 
-## Run the Application
+The fields **must match exactly**:
 
-Now that everything has been sucessfully installed, you can simply run the following command in the route directory of the project in the terminal:
+| id | name    | external_id | created_at          | updated_at          |
+| -- | ------- | ----------- | ------------------- | ------------------- |
+| 0  | Kobliat | 0           | 2025-12-14 16:30:45 | 2025-12-14 16:30:45 |
 
+---
+
+## ▶️ Run the Application
+
+From the project root, run:
+
+```bash
+composer run dev
 ```
-compser run dev
+
+In your terminal, **Ctrl + Click** the local URL (example below) or open it manually in your browser:
+
+```text
+INFO  Server running on [http://127.0.0.1:8001]
 ```
 
-In the terminal **ctr+click** on the local host URL to open the application eg. `NFO  Server running on [http://127.0.0.1:8001].` or head to your local host in your chosen web browser.
+---
 
-## Testing the API
+## 🧪 Testing the API
 
-Execute the following cUrl commands in your terminal while running the application in order to test teh API.
+Use the following `curl` commands while the application is running.
 
-### Send Message to Kobliat
+---
 
-```
+### ✉️ Send a Message
+
+```bash
 curl -X POST http://localhost:8000/api/messages \
   -H "Content-Type: application/json" \
-  -d '{"external_user_id":1,"customer_name":"John Doe","message":"Hello, I need assistance","message_id":"msg_123","sent_at":"2025-12-14 20:30:00"}'
+  -d '{
+    "external_user_id": 1,
+    "customer_name": "John Doe",
+    "message": "Hello, I need assistance",
+    "message_id": "msg_123",
+    "sent_at": "2025-12-14 20:30:00"
+  }'
 ```
 
-### Get List of Conversations
+---
 
-```
-curl http://localhost:8000/api/conversations -H "Accept: application/json"
+### 📜 Get All Conversations
+
+```bash
+curl http://localhost:8000/api/conversations \
+  -H "Accept: application/json"
 ```
 
-### Get a Conversation
+---
 
+### 💬 Get a Single Conversation
+
+```bash
+curl http://localhost:8000/api/conversations/{conversation_id} \
+  -H "Accept: application/json"
 ```
-curl http://localhost:8000/api/conversations/{conversation_id} -H "Accept: application/json"
-```
+
+---
+
+✅ You are now ready to use **Kobliat Mini Router**.
+
+## 🛠️ Developer Notes
+
+### 📌 Assumptions
+
+* 🔐 **User authentication is intentionally omitted** from this project.
+
+  * All non-external (local) messages are associated with a default `user_id = 0`.
+* 📡 **API requests require all fields to be populated**.
+
+  * For successful responses, follow the example `curl` commands exactly and ensure no fields are omitted or left empty.
+
+---
+
+### 🔄 What Would I Change?
+
+#### 🎨 Styling Best Practices
+
+* The frontend correctly leverages **slots** and **reusable components** ,however, **styling is fully hard-coded** within components.
+* A cleaner and more scalable approach would be to:
+
+  * Centralize styles in `app.css`
+  * Introduce reusable utility classes or a design system
+
+This would satisfy my personal standards more for frontend work.
+
+---
+
+#### 📚 Documentation
+
+* Existing documentation is minimal and mostly uses the default `Laravel` comments made from `Artisan` etc.
+* The project would benefit from:
+
+  * More in-depth inline comments
+  * Clear function- and class-level documentation
+  * Explicit explanations of API contracts and data flow
+
+---
+
+#### 🔐 Authentication
+
+* Adding authentication would remove the **ad-hoc handling** of local user messages.
+* The current `user_id = 0` solution is a temporary, styled workaround.
