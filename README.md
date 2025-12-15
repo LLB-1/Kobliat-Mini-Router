@@ -1,6 +1,6 @@
 # 🚦 Kobliat Mini Router
 
-A lightweight Laravel-based mini routing service for handling customer conversations and messages.
+A `Laravel` based test project to show case API enpoints and user friendly GUI experiences.
 
 ---
 
