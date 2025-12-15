@@ -43,7 +43,7 @@
                 @csrf
                 <a class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
                     href="{{ route('conversations.index') }}">
-                    back
+                    Back
                 </a>
                 <input type="text" name="message" placeholder="Type your message..."
                     class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
