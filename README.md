@@ -215,3 +215,24 @@ This would satisfy my personal standards more for frontend work.
 
 * Adding authentication would remove the **ad-hoc handling** of local user messages.
 * The current `user_id = 0` solution is a temporary, styled workaround.
+## 📝 Personal Note
+
+### 📖 Summary
+This project represents my first experience working with **Laravel** outside of a guided tutorial. As a result, I significantly exceeded the original **3-hour time estimate**. Slowly I put effort towards gaining understanding of Laravel’s **MVC architecture** and routing mechanisms.
+
+The experience was incredibly educational. As the day went on, things started to click, and towards the end of the process I was relying less and less on the assistance of AI and documentation and was able to solve problems independently. 
+
+The `Laravel Bug` may have bitten me and more personal projects are stewing in the back of my mind.
+
+---
+
+### 📚 Learning Materials
+Before starting this project, I worked through an introductory tutorial from the official Laravel documentation:
+
+- https://laravel.com/learn/getting-started-with-laravel/what-are-we-building
+
+I also referenced the standard Laravel documentation throughout development:
+
+- https://laravel.com/docs/12.x
+
+Additionally, the use of an **LLM** proved extremely valuable in accelerating the learning process, helping to clarify Laravel-specific conventions, behaviors, and framework features.
