@@ -1,4 +1,4 @@
-# 🚦 Kobliat Mini Router
+# 🚦 Mini Router
 
 A `Laravel` based test project to show case API enpoints and user friendly GUI experiences.
 
